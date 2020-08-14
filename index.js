@@ -1,6 +1,9 @@
 const express = require("express");
+const http = require("http");
+
 const app = express();
-const server = app.listen(80);
+const server = http.createServer(app);
+server.listen(80);
 
 console.log("running nodeJsTest on port 4000");
 
