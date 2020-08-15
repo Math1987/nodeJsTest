@@ -4,6 +4,8 @@ const https = require("https");
 const path = require("path");
 const fs = require("fs");
 
+console.log(process.env.NODE_ENV);
+
 const app = express();
 const server = http
   .createServer((req, res) => {
