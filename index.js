@@ -5,8 +5,14 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const server = http.createServer(app);
-server.listen(80);
+const server = http
+  .createServer((req, res) => {
+    res.writeHead(301, {
+      Location: `https://${req.headers.host}${req.url}`,
+    });
+    res.end();
+  })
+  .listen(80);
 
 const server2 = https.createServer(
   {
