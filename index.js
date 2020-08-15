@@ -27,6 +27,8 @@ server2.listen(443);
 
 console.log("running nodeJsTest on port 80 and 443");
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => {
   console.log("getting base root");
   res.status(200).send("test ok");
