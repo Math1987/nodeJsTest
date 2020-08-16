@@ -6,6 +6,8 @@ const fs = require("fs");
 const { environment } = require("./environment/environment");
 const { mongoose } = require("./mongo");
 
+console.log(environment);
+
 const app = express();
 const server = http
   .createServer((req, res) => {
