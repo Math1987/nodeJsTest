@@ -1,0 +1,13 @@
+{
+  "ssl": {
+    "key": "ssl/key.pem",
+    "cert": "ssl/cert.pem"
+  },
+  "mongodb": {
+    "user": "math17",
+    "pwd": "mazertys6589",
+    "ip": "localhost",
+    "port": 27017,
+    "dbName": "assoloto"
+  }
+}

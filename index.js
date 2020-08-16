@@ -3,8 +3,8 @@ const http = require("http");
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
-
-console.log(process.env.NODE_ENV);
+const { environment } = require("./environment/environment");
+const { mongoose } = require("./mongo");
 
 const app = express();
 const server = http
@@ -18,8 +18,8 @@ const server = http
 
 const server2 = https.createServer(
   {
-    key: fs.readFileSync(path.join(__dirname, "/ssl/key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "/ssl/cert.pem")),
+    key: fs.readFileSync(path.join(__dirname, environment.ssl.key)),
+    cert: fs.readFileSync(path.join(__dirname, environment.ssl.cert)),
   },
   app
 );
